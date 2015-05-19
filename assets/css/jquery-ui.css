@@ -877,16 +877,17 @@ body .ui-tooltip {
 	color: #1c94c4;
 	text-decoration: none;
 }
+/*-------color background and color font เปลี่ยนสี --------*/
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #fbcb09;
-	background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+	border: 1px solid #a6e1ec;
+	background: #D6D6D6 url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
 	font-weight: bold;
-	color: #c77405;
+	color: #000000;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
