@@ -139,10 +139,10 @@ class student extends CI_Controller {
     public function datastudent() {
         $this->load->view('template/navigation_after');
         $this->load->model('studentmodel');
+        //$user=$this->session->set_userdata('user');
         $user = $this->session->userdata('user');
-
-        $data['student'] = $this->studentmodel->showrelation($user['id_st']);
-        //print_r($data);
+        $data['student_es'] = $this->studentmodel->showrelationview($user['id_st']);
+        $data['user'] = $user;
         $this->load->view('student/showdetail', $data);
         
     }
@@ -184,6 +184,7 @@ class student extends CI_Controller {
             $this->session->set_userdata('user', $datauser);
             $this->load->view('template/navigation_after');
             $this->load->view('student/menustudent');
+            //print_r($datauser);
             
         } else {
             redirect('/student/login/');

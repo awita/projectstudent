@@ -10,7 +10,9 @@ class establishment extends CI_Controller {
 
     function home() {
         $this->load->view('home');
+        $this->load->view('header');
         $this->load->view('template/navigation');
+        
     }
 
     public function addformes() {
@@ -91,12 +93,15 @@ class establishment extends CI_Controller {
         $data = $this->establishmodel->showall();
         foreach ($data as $value) {
             echo $value['name_es'] . ',';
+            
+        }
+        echo ';';
+        foreach ($data as $value) {
+            echo $value['id_es'] . ',';
+            
         }
     }
-    public function showdataes(){
-        $this->load->model('establishmodel');
-        $data = $this->establishmodel->showall();
-    }
+    
 
 }
 

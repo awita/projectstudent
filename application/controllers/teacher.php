@@ -6,11 +6,11 @@
         
        
      public function home(){
-         $this->load->view('menuteacher');
+         $this->load->view('teacher/menuteacher');
      }
      
      public function login(){
-         $this->load->view('login_teacher');
+         $this->load->view('teacher/login_teacher');
          //$this->load->view('navigation_login');
      }
      public function login_system(){ 
@@ -25,7 +25,7 @@
         if (sizeof(!$query)>0){
            $this->session->set_userdata($query);
            //redirect('/student/showrelation/');
-           $this->load->view('menuteacher');
+           $this->load->view('teacher/menuteacher');
           print_r($query);
            }  else {
             redirect('/teacher/login/');

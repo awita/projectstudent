@@ -17,14 +17,25 @@ class studentmodel extends CI_Model {
         return $query->result_array();
     }
     
-    function showrelation1(){
+    /**
+     * Select Relation by view table with id_st
+     * @param type $id_st
+     * @return type
+     */
+    function showrelationview($id_st){
         
        $this->db->select("*");
+       $this->db->where('id_st',$id_st);
        $query =  $this->db->get('student_establish_view');
        return $query->result_array();
        
        
     }
+    /**
+     * select relation by join table with id_st
+     * @param type $id_st
+     * @return type
+     */
     function showrelation($id_st) {
        $this->db->where('student.id_st',$id_st);
         $this->db->select("*");

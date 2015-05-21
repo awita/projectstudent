@@ -105,23 +105,21 @@
         <!-- jQuery -->
         <script>
             $(function() {
-                var availableTags 
+                var availableTags
 
-                $.post("<?php echo base_url('index.php/establishment/getname');?>", function(data) {
-                    //alert("Data Loaded: " + data);
+                $.post("<?php echo base_url('index.php/establishment/getname'); ?>", function(data) {
+                   // alert("Data Loaded: " + data);
+                    
                     var res = data.split(",");
-                    availableTags=res;
-                     $("#name_es").autocomplete({
-                    source: res
+                    var resid = data.split(";");
+                    
+                    availableTags = res;
+                    $("#name_es").autocomplete({
+                        source: res,resid
+                    });
                 });
-                }); 
             });
-            
-            <script>
-             
-            
-         
-        </script>
+
         </script>
 
 
