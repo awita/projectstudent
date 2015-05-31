@@ -121,7 +121,7 @@
 
             function getDetail(id) {
                 $.post("<?php echo base_url('index.php/eatablishment/getDetail/id') ?>", function(data) {
-                    $(".result").html(data);
+                    $(".name_es").html(data);
                 });
 
             }

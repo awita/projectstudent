@@ -125,8 +125,15 @@ class establishment extends CI_Controller {
     public function getDetail(){
         $id_es = $this->input->get('id');  
         $this->load->model('establishmodel');
-        $data = $this->establishmodel->getDetail($id_es);
-        print_r($data);
+        $data= $this->establishmodel->getDetail($id_es);
+        
+        foreach ($data as $value)
+            $establish =array(
+                'name_es' =>$value['name_es'],
+                'address' =>$value['address'],s
+                
+            );
+        
         
     }
 
