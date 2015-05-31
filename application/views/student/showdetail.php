@@ -2,25 +2,14 @@
 <html lang='en'>
     <head>
         <meta charset="UTF-8" /> 
-        <?php echo css_asset('bootstrap.min.css'); ?>
-        <!-- Custom CSS -->
-
-        <?php echo css_asset('sb-admin.css'); ?>
-        <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <?php echo css_asset('font-awesome.min.css'); ?>
-        <title>
-            เข้าระบบสำหรับนักศึกษา
-        </title>
-
         <?php echo css_asset('backgr.css'); ?>
     </head>
     <body>
         <!-- Page Heading -->
         <div class="row " >
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
                 <h1 class="page-header">
-                    ระบบจัดการข้อมูล <small>การฝึกประสบการณ์วิชาชีพ</small>
+                    ระบบจัดการข้อมูลการฝึกประสบการณ์วิชาชีพ
                 </h1>
                 <ol class="breadcrumb">
                     <li class="active">
@@ -38,6 +27,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">ข้อมูลรายละเอียดนักศึกษา</h3>
                     </div>
+
                     <?php
                     $student = $student_es['0'];
                     $id_st = $student['id_st'];
@@ -68,6 +58,7 @@
                                     <th>รายละเอียดนักศึกษา</th>
                                 </tr>
                             </thead>
+                            <?php echo form_open(''); ?>
                             <tbody>
                                 <tr>
                                     <td>ภาคเรียนที่ : </td>
@@ -125,10 +116,14 @@
                                     <td>เบอร์โทรศัพท์ :</td>
                                     <td><?php echo $tell_pr ?></td>
                                 </tr>
+                            </tbody>
+                            <thead>
                                 <tr>
-                                    <td colspan="2">ข้อมูลสถานประกอบการณ์</td>
+                                    <th colspan="2">ข้อมูลสถานประกอบการณ์</th>
 
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>ชื่อสถานประกอบการณ์ :</td>
                                     <td><?php echo $name_es ?></td>
@@ -146,9 +141,11 @@
                                     <td><?php echo $tell_es ?></td>
                                 </tr>
 
-
-
+                                <tr>
+                                    <td colspan="2"><button class="btn-default"type="submit" name="submit" id="update">แก้ไข</button></td>
+                                </tr>
                             </tbody>
+                            <?php echo form_close(); ?>
                         </table>
                     </div>
                 </div>

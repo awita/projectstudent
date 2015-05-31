@@ -29,12 +29,31 @@ class establishmodel extends CI_Model
     }
     
      function showall()
-    {
-        
+    {        
         $query = $this->db->get('establishment');
         return $query->result_array();
         
-    }    
+    }  
+    
+    public function showalldata($id_es){
+        $this->db->where('id_es',$id_es);
+        return $this->db->get('establishment');
+    }
+    
+    public function getestablishbyname($name){
+        $this->db->like('name_es',$name);
+        $query = $this->db->get('establishment');
+        
+        return $query->result_array();
+    }
+    
+    public function getDetail($id_es){
+        $this->db->where('id_es',$id_es);
+        $quey=  $this->db->get('establishment');
+        return $quey->result_array();
+    }
+
+    /*
     function search($searchdata)
     {        
         $this->db->like('name_es',$searchdata);
@@ -43,7 +62,7 @@ class establishmodel extends CI_Model
         return $query->result();
     
     }
-    
+    */
     
 }
 ?>

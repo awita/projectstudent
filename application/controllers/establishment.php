@@ -12,7 +12,6 @@ class establishment extends CI_Controller {
         $this->load->view('home');
         $this->load->view('header');
         $this->load->view('template/navigation');
-        
     }
 
     public function addformes() {
@@ -55,10 +54,12 @@ class establishment extends CI_Controller {
     }
 
     public function showdataestablish() {
-        $this->load->view('template/navigation');
         $this->load->model('establishmodel');
         $data['establish'] = $this->establishmodel->showall();
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
         $this->load->view('establishment/showallestablish', $data);
+        $this->load->view('template/footer');
     }
 
     public function update() {
@@ -89,20 +90,62 @@ class establishment extends CI_Controller {
     }
 
     public function getname() {
-        $this->load->model('establishmodel');
-        $data = $this->establishmodel->showall();
-        foreach ($data as $value) {
-            echo $value['name_es'] . ',';
-            
-        }
-        echo ';';
-        foreach ($data as $value) {
-            echo $value['id_es'] . ',';
-            
-        }
-    }
-    
+        $name = $this->input->get('term');
 
+        $this->load->model('establishmodel');
+        $data = $this->establishmodel->getestablishbyname($name);
+        $json = array();
+        foreach ($data as $value) {
+            $bus = array(
+                'label' => $value['name_es'],
+                'value' => $value['name_es'],
+                'id' =>$value['id_es']
+            );
+            array_push($json, $bus);
+        }
+
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    
+        /*
+          $name = $this->input->get('term');
+          $json = array();
+          for ($i = $name; $i < 10; $i++) {
+          $bus = array(
+          'lable' => $i,
+          'value' => $i . "value",
+          'id' => $i . "x"
+          );
+          array_push($json, $bus);
+          }
+          echo json_encode($json);
+
+         */
+    }
+    public function getDetail(){
+        $id_es = $this->input->get('id');  
+        $this->load->model('establishmodel');
+        $data = $this->establishmodel->getDetail($id_es);
+        print_r($data);
+        
+    }
+
+    
+    
+    
+    
+    /* ------tes form ------*/
+    
+    public function addform(){
+     $this->load->view('form');
+ }
+
+ public function adddata(){
+   
+        $data['name'] = $this->input->post('name');
+        $data['lastname']= $this->input->post('lastname');
+        $this->load->view('form',$data); 
+ } 
 }
 
 ?>

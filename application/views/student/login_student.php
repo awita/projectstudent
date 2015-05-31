@@ -2,12 +2,6 @@
 <html lang='en'>
 <head>
     <meta charset="UTF-8" /> 
-    <?php echo css_asset('bootstrap.min.css');?>
-    <!-- Custom CSS -->
-    
-    <?php echo css_asset('sb-admin.css');?>
-    <!-- Custom Fonts -->
-    <?php echo css_asset('font-awesome.min.css');?>
     <title>
         เข้าระบบสำหรับนักศึกษา
     </title>

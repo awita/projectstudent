@@ -2,13 +2,6 @@
 <html lang='en'>
 <head>
     <meta charset="UTF-8" /> 
-    <?php echo css_asset('bootstrap.min.css');?>
-    <!-- Custom CSS -->
-    
-    <?php echo css_asset('sb-admin.css');?>
-    <!-- Custom Fonts -->
-    
-    <?php echo css_asset('font-awesome.min.css');?>
     <title>
         เข้าระบบสำหรับนักศึกษา
     </title>
@@ -20,11 +13,11 @@
                 <div class="row " >
                     <div class="col-md-6 col-md-offset-3">
                         <h1 class="page-header">
-                            ระบบจัดการข้อมูล <small>การฝึกประสบการณ์วิชาชีพ</small>
+                            ระบบจัดการข้อมูลการฝึกประสบการณ์วิชาชีพ
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <i class="fa fa-dashboard"></i> เมนูหลัก
                             </li>
                         </ol>
                     </div>
