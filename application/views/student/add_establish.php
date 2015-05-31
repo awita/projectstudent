@@ -101,11 +101,11 @@
         </div>
         <div class="col-lg-12">
             <h1 class="page-header"></h1></div>
-            
-            <?php echo js_asset('jquery-ui.js'); ?>
-            <?php echo css_asset('jquery-ui.css'); ?>
-            <!-- Bootstrap Core JavaScript -->
-            <?php echo js_asset('bootstrap.min.js'); ?>
+
+        <?php echo js_asset('jquery-ui.js'); ?>
+        <?php echo css_asset('jquery-ui.css'); ?>
+        <!-- Bootstrap Core JavaScript -->
+        <?php echo js_asset('bootstrap.min.js'); ?>
         <script>
 
 
@@ -121,7 +121,7 @@
 
             function getDetail(id) {
                 $.post("<?php echo base_url('index.php/eatablishment/getDetail/id') ?>", function(data) {
-                    $(".name_es").html(data);
+                    
                 });
 
             }

@@ -15,7 +15,6 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">
-
                             </h1>
                             <ol class="breadcrumb" >
                                 <h3>เลือกเมนูการใช้งาน </h3>
@@ -23,13 +22,9 @@
                         </div>
                     </div>
                     <!-- /.row -->
-
                     <div class="row">
                         <div class="col-lg-12">
-
                             <div class="table-responsive " >
-
-
                                 <div>ข้อมูลส่วนตัวนักศึกษา</div>
                                 <div>กำหนดการส่งเอกสารและรายงาน</div>
                                 <div>ตารางนิเทศนักศึกษา</div>
@@ -39,22 +34,18 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- /#page-wrapper -->
-
         </div>
-        <!-- /#wrapper -->
+        <?php echo js_asset('jquery-ui.js'); ?>
+        <?php echo css_asset('jquery-ui.css'); ?>
+        <!-- Bootstrap Core JavaScript -->
+        <?php echo js_asset('bootstrap.min.js'); ?>
 
         <!-- jQuery -->
 
         <?php echo js_asset('jquery.js'); ?>
         <!-- Bootstrap Core JavaScript -->
-
         <?php echo js_asset('bootstrap.min.js'); ?>
     </body>
 

@@ -15,8 +15,10 @@ class establishment extends CI_Controller {
     }
 
     public function addformes() {
-        $this->load->view('template/navigation_after');
+        $this->load->view('template/header_after');
         $this->load->view('establishment/establishment_formadd');
+        $this->load->view('template/controlsidebar');
+        $this->load->view('template/footer');
     }
 
     public function addestablishment() {
