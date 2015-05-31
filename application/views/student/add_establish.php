@@ -3,10 +3,7 @@
 <html lang='en'>
     <head>
         <meta charset="UTF-8" /> 
-        <?php echo css_asset('bootstrap.min.css');?>
-        <!-- Custom CSS -->
-
-        <?php echo css_asset('sb-admin.css'); ?>
+        <?php echo js_asset('jquery-1.10.2.js'); ?>
         <title>
             เข้าระบบสำหรับนักศึกษา
         </title>
@@ -104,11 +101,12 @@
         </div>
         <div class="col-lg-12">
             <h1 class="page-header"></h1></div>
-            <?php echo js_asset('jquery.js'); ?>
-        <!-- Bootstrap Core JavaScript -->
-        <?php echo js_asset('bootstrap.min.js'); ?>
+            
+            <?php echo js_asset('jquery-ui.js'); ?>
+            <?php echo css_asset('jquery-ui.css'); ?>
+            <!-- Bootstrap Core JavaScript -->
+            <?php echo js_asset('bootstrap.min.js'); ?>
         <script>
-
 
 
             $("#name_es").autocomplete({
@@ -117,10 +115,16 @@
                 select: function(event, ui) {
                     //  console.log(ui.item);
                     //  alert(ui.item.name);
-                    $('#id_es').val(ui.item.id);
+                    getDetail(ui.item.id);
                 }
             });
 
+            function getDetail(id) {
+                $.post("<?php echo base_url('index.php/eatablishment/getDetail/id') ?>", function(data) {
+                    $(".result").html(data);
+                });
+
+            }
 
 
         </script>
