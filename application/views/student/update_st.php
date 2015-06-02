@@ -15,9 +15,9 @@
     </tr>
     <tr>
         <td colspan="2">ภาคเรียนที่ : <select name="term" id="term" value="<?php echo $student->term; ?>">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+        <option <?php if ($student->term=="1"){echo"selected";}?>>1</option>
+        <option <?php if ($student->term=="2"){echo"selected";}?>>2</option>
+        <option <?php if ($student->term=="3"){echo"selected";}?>>3</option>
       </select></td>
          
       <td align="right"colspan="2" >ปีการศึกษา : <select name="year" id="year" value="<?php echo $student->year; ?>">
@@ -31,9 +31,9 @@
         <td colspan="2">สาขาวิชา :</td>
       <td>
           <select name="major" id="major" value="<?php echo $student->major; ?>">
-            <option>เลือกสาขาวิชา</option>
-            <option>วิทยาการคอมพิวเตอร์</option>
-            <option>เทคโนโลยีสารสนเทศ</option>
+           
+            <option <?php if ($student->major=="วิทยาการคอมพิวเตอร์"){echo"selected";}?>>วิทยาการคอมพิวเตอร์</option>
+            <option <?php if ($student->major=="เทคโนโลยีสารสนเทศ"){echo"selected";}?>>เทคโนโลยีสารสนเทศ</option>
           </select></td>
       <td>&nbsp;</td>
     </tr>
@@ -75,10 +75,6 @@
     <tr>
         <td colspan="2">เบอร์โทร : </td>
         <td><input type="text" name="tell_pr" id="tell_pr" value="<?php echo $student->tell_pr; ?>"></td>
-    </tr>
-    <tr>
-        <td colspan="2">ชื่อผู้ใช้ : </td>
-        <td><input type="text"name="username" id="username" value="<?php echo $student->username; ?>"</td>
     </tr>
     <tr>
         <td colspan="2">รหัสผ่าน : </td>

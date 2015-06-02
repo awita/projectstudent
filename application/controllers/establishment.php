@@ -101,14 +101,14 @@ class establishment extends CI_Controller {
             $bus = array(
                 'label' => $value['name_es'],
                 'value' => $value['name_es'],
-                'id' =>$value['id_es']
+                'id' => $value['id_es']
             );
             array_push($json, $bus);
         }
 
         $jsonstring = json_encode($json);
         echo $jsonstring;
-    
+
         /*
           $name = $this->input->get('term');
           $json = array();
@@ -124,37 +124,15 @@ class establishment extends CI_Controller {
 
          */
     }
-    public function getDetail(){
-        $id_es = $this->input->get('id');  
+
+    public function getDetail($id) {
+         $id_es = $id;  
         $this->load->model('establishmodel');
-        $data= $this->establishmodel->getDetail($id_es);
-        
-        foreach ($data as $value)
-            $establish =array(
-                'name_es' =>$value['name_es'],
-                'address' =>$value['address'],s
-                
-            );
-        
-        
+         $data= $this->establishmodel->getDetail($id_es);
+
+         echo json_encode($data[0]);
     }
 
-    
-    
-    
-    
-    /* ------tes form ------*/
-    
-    public function addform(){
-     $this->load->view('form');
- }
-
- public function adddata(){
-   
-        $data['name'] = $this->input->post('name');
-        $data['lastname']= $this->input->post('lastname');
-        $this->load->view('form',$data); 
- } 
 }
 
 ?>

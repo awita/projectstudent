@@ -90,7 +90,7 @@
                                         $year = $row['year'];
 
                                         $link = anchor('student/showdetail/' . $id_st, "$name_st");
-                                        $update = anchor('student/update/' . $id_st,'<button  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>');
+                                        $update = anchor('student/formupdate/' . $id_st,'<button  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>');
 
                                         $attributs = "onclick= \"return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')\" ";
                                         $delete = anchor('student/delete/' . $id_st, '<button  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>', $attributs);

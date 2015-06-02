@@ -71,8 +71,16 @@ class student extends CI_Controller {
     }
 
     //*********function update datastudent*************//
-
-    public function update() {
+    public function formupdate($id_st)
+    {
+        $this->load->model('studentmodel');
+        $query=  $this->studentmodel->getstudentid($id_st);
+        $result=$query->result();
+        $data['student']=$result[0];
+        
+        $this->load->view('student/update_st',$data);
+    }
+    public function update($id_st) {
         //$this->load->studentmodel('update');
 
         $data = array(
@@ -90,8 +98,8 @@ class student extends CI_Controller {
             'tell_pr' => $this->input->post('tell_pr'),
             'pass' => $this->input->post('pass')
         );
-        $this->studentmodel->update($id, $data);
-        $this->show();
+        $this->studentmodel->update($id_st, $data);
+        $this->load->view('');
     }
 
     //**************function showdatastudent****************//

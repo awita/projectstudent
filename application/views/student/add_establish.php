@@ -48,14 +48,13 @@
 
                                             <input class="form-control" type="text" id="name_es" name="name_es"/>
 
-                                            <input class="form-control" type="text" id="id_es" name="id_es"/>
                                         </td>  
                                         <td> <button class="btn btn-lg btn-default" type="submit" name="submit">บันทึกข้อมูล</button> </td>
                                     </tr>
 
                                 </table>
 
-                                <table class="table table-bordered ">
+                                <table class="table table-bordered " id="tabledetail">
                                     <thead>
                                         <tr>
                                             <th colspan="2" background>รายละเอียดสถานประกอบการณ์</th>
@@ -68,11 +67,11 @@
                                     <tbody>
                                         <tr>
                                             <td>ชื่อสถานประกอบการณ์</td>
-                                            <td></td>
+                                            <td id="name_es_detail"></td>
                                         </tr>
                                         <tr>
                                             <td>ที่อยู่</td>
-                                            <td></td>
+                                            <td id = "address_es_detail"></td>
                                         </tr>
                                         <tr>
                                             <td>เว็บไซต์ </td>
@@ -114,21 +113,25 @@
                 minLength: 0,
                 select: function(event, ui) {
                     //  console.log(ui.item);
-                    //  alert(ui.item.name);
                     getDetail(ui.item.id);
                 }
             });
 
             function getDetail(id) {
-                $.post("<?php echo base_url('index.php/eatablishment/getDetail/id') ?>", function(data) {
-                    
+                $.post("<?php echo base_url('index.php/establishment/getDetail/') ?>/"+id, function(data) {
+                   var obj = jQuery.parseJSON(data);
+                    $("#name_es_detail").html(obj.name_es);
+                    $("#address_es_detail").html(obj.address_es);
                 });
 
             }
-
+            
+            
+            
+           
 
         </script>
-
+        
         <?php echo js_asset('jquery.js'); ?>
         <!-- Bootstrap Core JavaScript -->
         <?php echo js_asset('bootstrap.min.js'); ?>

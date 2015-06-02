@@ -8,14 +8,13 @@ font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helve
 }
 
 form {
- 	background:#111; 
+ background:#fff; 
   width:300px;
   margin:30px auto;
-  border-radius:0.4em;
-  border:1px solid #191919;
+  border-radius:0em;
   overflow:hidden;
   position:relative;
-  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+  
 }
 
 form:after {

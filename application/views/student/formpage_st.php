@@ -98,7 +98,7 @@
                                         <label>รหัสผู้ใช้งาน : </label>
                                         <input class="form-control" type="password" placeholder="Enter your password"name="pass" >
                                     </div>
-                                    <div  text-center">
+                                    <div  text-center>
                                           <div class="panel-body">
                                             <button type="submit" class="btn btn-default">บันทึกข้อมูล</button>
                                             <button type="reset" class="btn btn-default">ยกเลิก</button>

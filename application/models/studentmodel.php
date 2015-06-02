@@ -63,11 +63,18 @@ class studentmodel extends CI_Model {
         $this->db->insert('student', $data);
     }
 
+    public function getstudentid($id_st)
+    {
+        $this->db->where('id_st',$id_st);
+        $query=  $this->db->get('student');
+        return $query;
+    }
+
     public function update($id_st,$data){
-        $this->db->where('student',$id_st);
+        $this->db->where('id_st',$id_st);
         $this->db->update('student',$data);
-        /*$query=  $this->db->get();
-        return $query->result_array();*/
+        
+       
     }
     public function delete($id_st) {
         $this->db->delete('student', array('id_st' => $id_st));
