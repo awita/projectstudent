@@ -17,11 +17,11 @@ class establishmodel extends CI_Model
         $this->db->delete('establishment', array('id_es' => $id_es));
    
     }
-    
+    /*
     function update($id_es,$data){
         $this->db->where('id_es', $id_es);
         $this->db->update('establishment', $data); 
-    }
+    }*/
 
     public function getestablishment($id) {
         $this->db->where('id_es', $id);
@@ -49,10 +49,22 @@ class establishmodel extends CI_Model
     
     public function getDetail($id_es){
         $this->db->where('id_es',$id_es);
-        $quey=  $this->db->get('establishment');
-        return $quey->result_array();
+        $query=  $this->db->get('establishment');
+        return $query->result_array();
     }
 
+    public function add_idestablish($data){
+        $this->db->insert('student_establish',$data);
+        
+    }
+    
+    public function checkid($id_st)
+    {       
+        $this->db->select('*');
+        $this->db->where('id_st',$id_st);
+        $query = $this->db->get('student_establish_view');
+        return $query->result_array();
+    }
     /*
     function search($searchdata)
     {        

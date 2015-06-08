@@ -12,13 +12,13 @@
     <body>   
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-md-8 col-md-offset-2" >
+            <div class="col-md-6 col-md-offset-3" >
                 <h1 class="page-header">
                     ขอเพิ่มสถานประกอบการณ์ใหม่
                 </h1>
                 <ol class="breadcrumb">
                     <li>
-                        <i class="fa fa-dashboard"></i>  <a href="home">หน้าหลัก</a>
+                        <i class="fa fa-dashboard"></i>  <a href="<?php echo base_url('index.php/student/menu');?>">หน้าหลัก</a>
                     </li>
                     <li class="active">
                         <i class="fa fa-edit"></i> เพิ่มสถานประกอบการณ์ใหม่
@@ -28,7 +28,7 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-8  col-lg-offset-2" >
+            <div class="col-md-6  col-lg-offset-3" >
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><center>เพิ่มสถานประกอบการณ์ใหม่</center></h3>

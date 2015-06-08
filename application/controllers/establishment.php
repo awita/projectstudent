@@ -126,11 +126,31 @@ class establishment extends CI_Controller {
     }
 
     public function getDetail($id) {
-         $id_es = $id;  
+        $id_es = $id;
         $this->load->model('establishmodel');
-         $data= $this->establishmodel->getDetail($id_es);
+        $data = $this->establishmodel->getDetail($id_es);
 
-         echo json_encode($data[0]);
+        echo json_encode($data[0]);
+    }
+
+    public function add_establish() {
+        $id = $user = $this->session->userdata('user');
+
+        $data['id_es'] = $this->input->post('id_es');
+        $data['id_st'] = $user['id_st'];
+        $data['year'] = date("Y");
+
+        $this->load->model('establishmodel');
+        $data = $this->establishmodel->add_idestablish($data);
+        //$this->load->view('template/header_after');
+    }
+    
+      public function getditail(){
+       
+        $this->load->model('establishmodel');
+        $user = $this->session->userdata('user');
+        
+        $st_es =  $this->establishmodel->checkid($user['id_st']);
     }
 
 }

@@ -71,15 +71,15 @@ class student extends CI_Controller {
     }
 
     //*********function update datastudent*************//
-    public function formupdate($id_st)
-    {
+    public function formupdate($id_st) {
         $this->load->model('studentmodel');
-        $query=  $this->studentmodel->getstudentid($id_st);
-        $result=$query->result();
-        $data['student']=$result[0];
-        
-        $this->load->view('student/update_st',$data);
+        $query = $this->studentmodel->getstudentid($id_st);
+        $result = $query->result();
+        $data['student'] = $result[0];
+
+        $this->load->view('student/update_st', $data);
     }
+
     public function update($id_st) {
         //$this->load->studentmodel('update');
 
@@ -105,12 +105,13 @@ class student extends CI_Controller {
     //**************function showdatastudent****************//
 
     public function showall() {
-        //$this->load->view('template/navigation');
+        $this->load->view('template/header_after');
         $this->load->model('studentmodel');
         //$data['query']=$this->studentmodel->showall();
         $data['query'] = $this->studentmodel->showall();
         $this->load->view('student/showall', $data);
         //$this->load->model('studentmodel');
+        $this->load->view('template/footer');
     }
 
     public function showdetail() {
@@ -120,19 +121,28 @@ class student extends CI_Controller {
         $this->load->model('establishmodel');
         $user = $this->session->userdata('user');
 
+        //$data['student'] = $this->studentmodel->showdetail($user['id_st']);
+        $st_es = $this->establishmodel->checkid($user['id_st']);
+        /* if(sizeof($st_es) > 0){
+          $st_es['st_es'] = $st_es[0];
+          }else{
+          $st_es['st_es'] = $st_es;
+          }
+          //$st_es[$row['id_es']]=$this->establishmodel->showall('id_es');
+          //$data['establish']=  $this->establishmodel->showrelationview('id_es');
+          //$establish = $this->establishmodel->showall();
 
-        $data['student'] = $this->studentmodel->showdetail($user['id_st']);
-        $establish = $this->establishmodel->showall();
-        $name_establis = array();
-        foreach ($establish as $row) {
-            $name_establis[$row['id_es']] = $row['name_es'];
-        }
 
-        $data['establish'] = $name_establis;
+          /* $name_establis = array();
+          foreach ($establish as $row) {
+          $name_establis[$row['id_es']] = $row['name_es'];
+          }
 
-        $this->load->view('student/add_establish', $data);
+          $data['establish'] = $name_establis;
+         * */
+
+        $this->load->view('student/add_establish', $st_es);
         $this->load->view('template/footer');
-        
     }
 
     /* ----- select data student is com-sci */
@@ -185,7 +195,7 @@ class student extends CI_Controller {
         //$data['menu1'] = "memmu";
         $this->load->view('template/header');
         $this->load->view('student/login_student');
-       
+
         //$this->load->view('template/navigation_login', $data);
     }
 
@@ -196,17 +206,14 @@ class student extends CI_Controller {
             'password' => $this->input->post('pass'),
         );
         //$this->session->set_userdata($datauser);
-
-
         $query = $this->studentmodel->login($data);
         if (sizeof($query) > 0) {
             //$this->session->set_userdata($query);
             //
            $datauser = $query[0];
-           $this->session->set_userdata('user', $datauser);
-           $this->load->view('template/header_after');
-           $this->load->view('student/menustudent');
-          
+            $this->session->set_userdata('user', $datauser);
+            $this->load->view('template/header_after');
+            $this->load->view('student/menustudent');
             //print_r($datauser);
         } else {
             redirect('/student/login/');
@@ -220,67 +227,34 @@ class student extends CI_Controller {
         session_destroy();
         redirect('student/home');
     }
-    
-    public function menu(){
+
+    public function menu() {
         $user = $this->session->userdata('user');
         $data['student'] = $this->studentmodel->showrelationview($user['id_st']);
-               
-        $this->load->view('template/header_after',$data);
+
+        $this->load->view('template/header_after', $data);
         $this->load->view('student/menustudent');
         //print_r($data);
-        
-        
-        
     }
-    //*************login สำหรับอาจารย์**************//
 
-    /*
-      public function login_teacher(){
-      $data['menu1']="memmu";
-      $this->load->view('login_teacher');
-      $this->load->view('navigation_login',$data);
-      //$this->load->teacher->login_system();
+    public function getstatus() {
+        $this->load->model('establishmodel');
+        $user = $this->session->userdata('user');
+        $st_es = $this->establishmodel->checkid($user['id_st']);
+        $json = array();
+        if (sizeof($st_es) > 0) {
+            $info = array('info' => 'true');
+            array_push($json, $info, $st_es);
+        } else {
 
+            $info = array('info' => 'false');
+            array_push($json, $info);
+        }
 
-      }
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
 
-      public function system_teacher()
-      {
-      $this->load->library('session');
-      $this->load->view('navigation_after');
-      $this->load->model('teachermodel');
-
-      $data=array(
-      'username' => $this->input->post('username'),
-      'password' => $this->input->post('password'));
-      print_r($data);
-      $query=  $this->teachermodel->login($data);
-      $this->session->set_userdata($query);
-      //$userid = $this->user_model->attemptLogin($username, $pass);
-      if(sizeof($query)>0)
-      {
-
-      $this->load->view('menuteacher',$query);
-      }
-      else
-      {
-      $this->session->set_userdata($query);
-      redirect('/student/login_teacher/');
-      }
-      /*
-      if(sizeof($query)>0){
-      //$this->session->set_userdata($query);
-      $this->load->view('menuteacher',$query);
-      }
-      else {
-      redirect('/student/login_teacher/');
-      //echo "login fall";
-      }
-
-
-      }
-     * 
-     */
 }
 ?>
 

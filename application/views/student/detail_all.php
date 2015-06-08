@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>แสดงข้อมูล</title>
         <meta charset="utf-8">
-        
+
     </head>
 
     <body>
@@ -17,8 +17,6 @@
                 </div> 
             </div>
         </div>
-        
-
         <?php
         //print_r($student);
         echo"<table border='0' align ='center'>";
@@ -33,13 +31,11 @@
 
         foreach ($student as $row) {
             $id_st = $row['id_st'];
-            $name_st=$row['name_st'];
-            $lastname_st=$row['lastname_st'];
-            $tell_st=$row['tell_st'];
+            $name_st = $row['name_st'];
+            $lastname_st = $row['lastname_st'];
+            $tell_st = $row['tell_st'];
             $establish = $row['name_es'];
             $year = $row['year'];
-            
-
 
             echo "
                     <tr>
@@ -49,14 +45,10 @@
                        <td> $tell_st</td>
                        <td> $establish</td> 
                        <td>$year</td>
-                       
-                        
                     </tr>";
         }
         echo "</table>";
         ?>  
-
-
     </form>
 </body>
 </html>

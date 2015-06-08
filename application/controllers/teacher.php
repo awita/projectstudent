@@ -34,9 +34,17 @@ class teacher extends CI_Controller {
         } else {
             redirect('/teacher/login/');
             //echo "login fall";
-        }
+        }            
     }
-
+    public function detailstudent($id_st){
+        $this->load->view('template/header_after');
+        $this->load->model('studentmodel');
+        $data['student']= $this->studentmodel->showdetail($id_st);
+        
+        $this->load->view('teacher/detailstudent',$data);
+        
+        
+    }
 }
 
 ?>
