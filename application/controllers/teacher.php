@@ -23,14 +23,14 @@ class teacher extends CI_Controller {
             'password' => $this->input->post('password'),
         );
 
-        print_r($data);
+        //print_r($data);
         $query = $this->teachermodel->login($data);
         if (sizeof(!$query) > 0) {
             $this->session->set_userdata($query);
             //redirect('/student/showrelation/');
-            $this->load->view('template/header');
+            $this->load->view('template/header_after');
             $this->load->view('teacher/menuteacher');
-            print_r($query);
+           // print_r($query);
         } else {
             redirect('/teacher/login/');
             //echo "login fall";

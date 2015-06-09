@@ -64,7 +64,7 @@ class establishmodel extends CI_Model
         $this->db->where('id_st',$id_st);
         $query = $this->db->get('student_establish_view');
         return $query->result_array();
-    }
+    } 
     /*
     function search($searchdata)
     {        

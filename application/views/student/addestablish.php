@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang='en'>
     <head>
         <meta charset="UTF-8" /> 
@@ -42,32 +41,44 @@
                             </div>
                             <div class="panel-body"> 
 
-                               
-                                    <form action="<?php echo base_url('index.php/establishment/add_establish'); ?>" method="post" id="form1">
-                                        <table class="table ">
 
-                                            <tr>
-                                                <td width = "30%" colspan="2">กรุณาเลือกสถานประกอบการณ์</td>
+                                <form action="<?php echo base_url('index.php/establishment/add_establish'); ?>" method="post" id="form1" hidden="true">
+                                    <table class="table ">
 
-                                                <td width="50%">
-                                                    <input class="form-control" type="text" id="name_es" name="name_es"/>
-                                                    <input class="form-control" type="hidden" id="id_es" name="id_es"/>
+                                        <tr>
+                                            <td width = "30%" colspan="2">กรุณาเลือกสถานประกอบการณ์</td>
 
-                                                </td>  
-                                                <td> 
-                                                    <input  type="submit" name="submit" value="บันทึกข้อมูล">
-                                                    
-                                                    <input  onclick="getstatus()" type="button"  value="aaa">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </form>
+                                            <td width="50%">
+                                                <input class="form-control" type="text" id="name_es" name="name_es"/>
+                                                <input class="form-control" type="hidden" id="id_es" name="id_es"/>
 
+                                            </td>  
+                                            <td> 
+                                                <input  type="submit" name="submit" value="บันทึกข้อมูล">
 
+                                                <input  onclick="getstatus()" type="button"  value="aaa">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                                
+                                <div class="callout callout-info" hidden="true">
+                                    <h4>I am a danger callout!</h4>
+                                    <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                                </div>
+                                
+                                
+                                <div class="callout callout-success" hidden="true">
+                                    <h4>I am a success callout!</h4>
+                                    <p>This is a green callout.</p>
+                                </div>
+                                
+                                
                                 <table class="table table-bordered " id="tabledetail">
                                     <thead>
                                         <tr>
-                                            <th colspan="2" background>รายละเอียดสถานประกอบการณ์</th>
+                                            <th>รายละเอียดสถานประกอบการณ์</th>
+                                            <td id="status"></td>
                                         </tr>
                                         <tr>
                                             <th width="40%">ข้อมูล</th>
@@ -112,12 +123,16 @@
             <h1 class="page-header"></h1></div>
 
         <?php echo js_asset('jquery-ui.js'); ?>
-        
+
         <!-- Bootstrap Core JavaScript -->
         <?php echo js_asset('bootstrap.min.js'); ?>
         <script>
 
+            $(document).ready(function() {
+                $("#form1").hide();
+                getstatus();
 
+            });
             $("#name_es").autocomplete({
                 source: "<?php echo base_url('index.php/establishment/getname/?') ?>",
                 minLength: 0,
@@ -140,10 +155,31 @@
                 });
 
             }
-            
-           function getstatus(){
-              alert("asdfafsd");
-           }
+
+            function getstatus() {
+                $.post("<?php echo base_url('index.php/student/getstatus/') ?>/", function(data) {
+                    var obj = jQuery.parseJSON(data);
+                    if (obj[0].info == 'true') {
+                        
+                        if(status = 0){
+                            
+                            /// show blue wait approve
+                        }else{
+                            
+                            // green approve
+                        }
+                        getDetail(obj[1][0].id_es);
+                          // show green
+
+                    } else {
+
+                        $("#form1").show();
+                        // false 
+                        //alert("Don't have data");
+                    }
+
+                });
+            }
         </script>
 
         <?php echo js_asset('jquery.js'); ?>
@@ -152,5 +188,4 @@
 
 
     </body>
-
 </html>

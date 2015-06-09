@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8" /> 
     <?php echo css_asset('bootstrap.min.css');?>
-    <!-- Custom CSS -->
-    
-    <?php echo css_asset('sb-admin.css');?>
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <?php echo css_asset('font-awesome.min.css');?>
     <title>
         เข้าระบบสำหรับนักศึกษา

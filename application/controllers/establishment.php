@@ -142,7 +142,8 @@ class establishment extends CI_Controller {
 
         $this->load->model('establishmodel');
         $data = $this->establishmodel->add_idestablish($data);
-        //$this->load->view('template/header_after');
+        $this->load->view('template/header');
+        $this->load->view('student/addestablish');
     }
     
       public function getditail(){

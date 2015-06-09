@@ -114,37 +114,38 @@ class student extends CI_Controller {
         $this->load->view('template/footer');
     }
 
-    public function showdetail() {
-        $this->load->view('template/header_after');
-        $this->load->view('template/controlsidebar');
-        $this->load->model('studentmodel');
-        $this->load->model('establishmodel');
-        $user = $this->session->userdata('user');
+    /*
+      public function showdetail() {
+      $this->load->view('template/header_after');
+      $this->load->view('template/controlsidebar');
+      $this->load->model('studentmodel');
+      $this->load->model('establishmodel');
+      $user = $this->session->userdata('user');
 
-        //$data['student'] = $this->studentmodel->showdetail($user['id_st']);
-        $st_es = $this->establishmodel->checkid($user['id_st']);
-        /* if(sizeof($st_es) > 0){
-          $st_es['st_es'] = $st_es[0];
-          }else{
-          $st_es['st_es'] = $st_es;
-          }
-          //$st_es[$row['id_es']]=$this->establishmodel->showall('id_es');
-          //$data['establish']=  $this->establishmodel->showrelationview('id_es');
-          //$establish = $this->establishmodel->showall();
+      //$data['student'] = $this->studentmodel->showdetail($user['id_st']);
+      $st_es = $this->establishmodel->checkid($user['id_st']);
+      /* if(sizeof($st_es) > 0){
+      $st_es['st_es'] = $st_es[0];
+      }else{
+      $st_es['st_es'] = $st_es;
+      }
+      //$st_es[$row['id_es']]=$this->establishmodel->showall('id_es');
+      //$data['establish']=  $this->establishmodel->showrelationview('id_es');
+      //$establish = $this->establishmodel->showall();
 
 
-          /* $name_establis = array();
-          foreach ($establish as $row) {
-          $name_establis[$row['id_es']] = $row['name_es'];
-          }
+      /* $name_establis = array();
+      foreach ($establish as $row) {
+      $name_establis[$row['id_es']] = $row['name_es'];
+      }
 
-          $data['establish'] = $name_establis;
-         * */
+      $data['establish'] = $name_establis;
 
-        $this->load->view('student/add_establish', $st_es);
-        $this->load->view('template/footer');
-    }
 
+      $this->load->view('student/addestablish', $st_es);
+      $this->load->view('template/footer');
+      }
+     */
     /* ----- select data student is com-sci */
 
     public function showrelation() {
@@ -235,6 +236,16 @@ class student extends CI_Controller {
         $this->load->view('template/header_after', $data);
         $this->load->view('student/menustudent');
         //print_r($data);
+    }
+
+    public function selectestablish() {
+        $this->load->model('establishmodel');
+        $this->load->view('template/header_after');
+        $user = $this->session->userdata('user');
+        $st_es = $this->establishmodel->checkid($user['id_st']);
+
+        $this->load->view('student/addestablish', $st_es);
+        //$this->load->view('template/footer');
     }
 
     public function getstatus() {

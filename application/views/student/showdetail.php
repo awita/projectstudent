@@ -2,6 +2,9 @@
 <html lang='en'>
     <head>
         <meta charset="UTF-8" /> 
+        <?php echo css_asset('bootstrap.min.css'); ?>
+        <!-- Custom Fonts -->
+        <?php echo css_asset('font-awesome.min.css'); ?>
         <?php echo css_asset('backgr.css'); ?>
     </head>
     <body>

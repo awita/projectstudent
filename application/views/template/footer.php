@@ -4,7 +4,7 @@
             <div class="full-opacity-hover hidden-xs">
                 <b>Version</b> 2.0
             </div>
-            <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+            
         </footer>
 
         <!-- jQuery 2.1.4 -->
@@ -16,9 +16,7 @@
         <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.date.extensions.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('assets/plugins/input-mask/jquery.inputmask.extensions.js'); ?>" type="text/javascript"></script>
-        <!-- date-range-picker -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker.js'); ?>" type="text/javascript"></script>
+         <script src="<?php echo base_url('assets/plugins/daterangepicker/daterangepicker.js'); ?>" type="text/javascript"></script>
         <!-- bootstrap color picker -->
         <script src="<?php echo base_url('assets/plugins/colorpicker/bootstrap-colorpicker.min.js'); ?>" type="text/javascript"></script>
         <!-- bootstrap time picker -->
