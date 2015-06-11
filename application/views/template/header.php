@@ -27,6 +27,7 @@
 
     </head>
     <body class="skin-blue sidebar-mini">
+       
         <header class="main-header">
             <!-- Logo -->
             <a href="<?php echo base_url('index.php/student/home') ?>" class="logo">

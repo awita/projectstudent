@@ -21,7 +21,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('index.php/student/showdetail')?>">
+                            <a href="<?php echo base_url('index.php/student/selectestablish')?>">
                                 <i class="menu-icon fa fa-file-text bg-light-blue-active"></i>
                                 <div class="menu-info">
                                     <h4 class="control-sidebar-subheading">เลือกสถานประกอบการณ์</h4>

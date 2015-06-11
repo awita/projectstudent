@@ -49,8 +49,12 @@
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        
 
+                        <?php
+                        $id_st = $user['id_st'];
+                        $name_st = $user['name_st'];
+                        $lastname_st = $user['lastname_st'];
+                        ?>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

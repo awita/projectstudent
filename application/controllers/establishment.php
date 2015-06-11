@@ -15,13 +15,15 @@ class establishment extends CI_Controller {
     }
 
     public function addformes() {
-        $this->load->view('template/header_after');
+        $user = $this->session->userdata('user');
+        $this->load->view('template/header_after', $user);
         $this->load->view('establishment/establishment_formadd');
         $this->load->view('template/controlsidebar');
         $this->load->view('template/footer');
     }
 
     public function addestablishment() {
+        
         $this->load->model('establishmodel');
         $data = array(
             'name_es' => $this->input->post('name_es'),
@@ -32,30 +34,22 @@ class establishment extends CI_Controller {
             'email' => $this->input->post('email'),
             'tell_es' => $this->input->post('tell_es'),
             'website' => $this->input->post('website')
-        );
-        $this->db->insert('establishment', $data);
+        );      
+        $this->establishmodel->add($data);
         $this->showestblis();
     }
 
-    public function addnew() {
-        $this->load->model('establishmodel');
-        $data['name_es'] = $this->input->post('name_es');
-        $this->db->insert('establishment', $data);
-    }
-
     public function showestblis() {
-
-        $this->load->view('template/navigation_after');
+        $user = $this->session->userdata('user');
+        $this->load->view('template/navigation_after',$user);
         $this->load->model('studentmodel');
         $this->load->model('establishmodel');
-        $this->load->session->userdata('user');
-        //$user=  $this->session->userdata('user');
-
-        $data['establish'] = $this->studentmodel->showrelation();
+        
+        $data['establish'] = $this->studentmodel->showrelation($user['id_st']);
         $this->load->view('establishment/showestablish', $data);
     }
 
-    public function showdataestablish() {
+    public function showdataestablish() { 
         $this->load->model('establishmodel');
         $data['establish'] = $this->establishmodel->showall();
         $this->load->view('template/header');
@@ -142,16 +136,17 @@ class establishment extends CI_Controller {
 
         $this->load->model('establishmodel');
         $data = $this->establishmodel->add_idestablish($data);
-        $this->load->view('template/header');
-        $this->load->view('student/addestablish');
+        $this->load->view('template/header_after', $user);
+        //redirect('/student/login/');        
+        redirect('/student/selectestablish/');
     }
-    
-      public function getditail(){
-       
+
+    public function getditail() {
+
         $this->load->model('establishmodel');
         $user = $this->session->userdata('user');
-        
-        $st_es =  $this->establishmodel->checkid($user['id_st']);
+
+        $st_es = $this->establishmodel->checkid($user['id_st']);
     }
 
 }

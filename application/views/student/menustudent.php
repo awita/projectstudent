@@ -9,7 +9,7 @@
             เข้าระบบสำหรับนักศึกษา
         </title>
 
-        <?php echo css_asset('backgr.css'); ?>
+       <?php echo css_asset('backgr.css'); ?>
     </head>
     <body>
         <!-- Page Heading -->
@@ -19,9 +19,11 @@
                     ระบบจัดการข้อมูลการฝึกประสบการณ์วิชาชีพ
                 </h1>
                 <ol class="breadcrumb">
+                    <a href="<?php echo base_url('index.php/student/menu')?>">
                     <li class="active">
                         <i class="fa fa-dashboard"></i> เมนูหลัก
                     </li>
+                    </a>
                 </ol>
             </div>
         </div>
@@ -109,7 +111,7 @@
 
             <div class="row">
                 <div class="col-md-3 col-md-offset-3"  >
-                    <a href="#">
+                    <a href="<?php echo base_url('index.php/document/menudocument');?>">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">

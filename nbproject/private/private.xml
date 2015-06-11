@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/views/teacher/student_establish.php</file>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/controllers/establishment.php</file>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/models/establishmodel.php</file>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/models/studentmodel.php</file>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/views/student/add_establish.php</file>
-            <file>file:/C:/xampp/htdocs/projectstudent/application/controllers/student.php</file>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/controllers/document.php</file>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/views/document/menudocument.php</file>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/views/document/document_form1.php</file>
         </group>
     </open-files>
 </project-private>

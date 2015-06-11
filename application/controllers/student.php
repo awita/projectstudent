@@ -84,7 +84,7 @@ class student extends CI_Controller {
         //$this->load->studentmodel('update');
 
         $data = array(
-            'id_st' => $this->input->post('id_st'),
+           
             'term' => $this->input->post('term'),
             'year' => $this->input->post('year'),
             'major' => $this->input->post('major'),
@@ -168,11 +168,12 @@ class student extends CI_Controller {
     }
 
     public function datastudent() {
-        $this->load->view('template/header_after');
+        
         $this->load->model('studentmodel');
         //$user=$this->session->set_userdata('user');
         $user = $this->session->userdata('user');
-        $data['student_es'] = $this->studentmodel->showrelationview($user['id_st']);
+        $this->load->view('template/header_after',$user);
+        $data['student_es'] = $this->studentmodel->showdetail($user['id_st']);
         $data['user'] = $user;
         $this->load->view('student/showdetail', $data);
         $this->load->view('template/controlsidebar');
@@ -213,7 +214,8 @@ class student extends CI_Controller {
             //
            $datauser = $query[0];
             $this->session->set_userdata('user', $datauser);
-            $this->load->view('template/header_after');
+            $user=  $this->session->userdata('user');
+            $this->load->view('template/header_after',$user);
             $this->load->view('student/menustudent');
             //print_r($datauser);
         } else {
@@ -230,22 +232,23 @@ class student extends CI_Controller {
     }
 
     public function menu() {
-        $user = $this->session->userdata('user');
-        $data['student'] = $this->studentmodel->showrelationview($user['id_st']);
+        $user['user'] = $this->session->userdata('user');
+        $this->load->view('template/header_aftermenu', $user);
+        //$data['student'] = $this->studentmodel->showrelationview($user['id_st']);
+        //print_r($data);
 
-        $this->load->view('template/header_after', $data);
         $this->load->view('student/menustudent');
         //print_r($data);
     }
 
     public function selectestablish() {
         $this->load->model('establishmodel');
-        $this->load->view('template/header_after');
         $user = $this->session->userdata('user');
+        $this->load->view('template/header_after',$user);
         $st_es = $this->establishmodel->checkid($user['id_st']);
 
         $this->load->view('student/addestablish', $st_es);
-        //$this->load->view('template/footer');
+        $this->load->view('template/footer');
     }
 
     public function getstatus() {

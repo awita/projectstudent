@@ -5,6 +5,7 @@
         <?php echo css_asset('font-awesome.min.css'); ?>
         <?php echo css_asset('jquery-ui.css'); ?>
         <?php echo js_asset('jquery-1.10.2.js'); ?>
+       
         <title>
             เข้าระบบสำหรับนักศึกษา
         </title>
@@ -56,29 +57,25 @@
                                             <td> 
                                                 <input  type="submit" name="submit" value="บันทึกข้อมูล">
 
-                                                <input  onclick="getstatus()" type="button"  value="aaa">
                                             </td>
                                         </tr>
                                     </table>
                                 </form>
-                                
-                                <div class="callout callout-info" hidden="true">
-                                    <h4>I am a danger callout!</h4>
-                                    <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+
+                                <div class="callout callout-info" hidden="true" id="wait">
+                                    <p>รอการอนุมัติจากอาจารย์ผู้ดูแลการฝึกประสบการณ์วิชาชีพ<p>
                                 </div>
-                                
-                                
-                                <div class="callout callout-success" hidden="true">
-                                    <h4>I am a success callout!</h4>
-                                    <p>This is a green callout.</p>
+
+
+                                <div class="callout callout-success" hidden="true" id="success">
+                                    <p>สถานประกอบการณ์ของคุณได้รับการอนุมัติแล้ว</p>
                                 </div>
-                                
-                                
+
                                 <table class="table table-bordered " id="tabledetail">
                                     <thead>
                                         <tr>
-                                            <th>รายละเอียดสถานประกอบการณ์</th>
-                                            <td id="status"></td>
+                                            <th colspan="2">รายละเอียดสถานประกอบการณ์</th>
+
                                         </tr>
                                         <tr>
                                             <th width="40%">ข้อมูล</th>
@@ -121,6 +118,7 @@
         </div>
         <div class="col-lg-12">
             <h1 class="page-header"></h1></div>
+            <?php echo js_asset('jquery.validate.min.js'); ?>
 
         <?php echo js_asset('jquery-ui.js'); ?>
 
@@ -143,6 +141,7 @@
                 }
             });
 
+            
             function getDetail(id) {
                 $.post("<?php echo base_url('index.php/establishment/getDetail/') ?>/" + id, function(data) {
                     var obj = jQuery.parseJSON(data);
@@ -160,26 +159,30 @@
                 $.post("<?php echo base_url('index.php/student/getstatus/') ?>/", function(data) {
                     var obj = jQuery.parseJSON(data);
                     if (obj[0].info == 'true') {
-                        
-                        if(status = 0){
-                            
+
+                        if (obj[1][0].status == 0) {
+                            $("#wait").show();
                             /// show blue wait approve
-                        }else{
-                            
+                        } else if (obj[1][0].status == 1) {
+                            $("#success").show();
                             // green approve
                         }
                         getDetail(obj[1][0].id_es);
-                          // show green
+                        // show green
 
                     } else {
 
                         $("#form1").show();
+                        
                         // false 
                         //alert("Don't have data");
                     }
 
                 });
             }
+
+            
+
         </script>
 
         <?php echo js_asset('jquery.js'); ?>
