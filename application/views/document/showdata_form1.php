@@ -57,35 +57,46 @@
                                         $major = $userdata['major'];
                                         $name_es = $userdata['name_es'];
                                         $address_es = $userdata['address_es'];
-                                        $name_pr = $userdata['name_pr'];
-                                        $tell_pr = $userdata['tell_pr'];
+                                        $number=$userdata['number'];
+                                        $road=$userdata['road'];
+                                        $alley=$userdata['alley'];
+                                        $district=$userdata['district'];
+                                        $county=$userdata['county'];
+                                        $city=$userdata['city'];
+                                        $postcode=$userdata['postcode'];
+                                        $phone=$userdata['phone'];
+                                        $fax=$userdata['fax'];
+                                        $number_contact=$userdata['number_contact'];
+                                        $road_contact=$userdata['road_contact'];
+                                        $alley_contact=$userdata['alley_contact'];
+                                        $district_contact=$userdata['district_contact'];
+                                        $county_contact=$userdata['county_contact'];
+                                        $city_contact=$userdata['city_contact'];
+                                        $postcode_contact=$userdata['postcode_contact'];
+                                        $phone_contact=$userdata['phone_contact'];
+                                        $fax_contact=$userdata['fax_contact'];
+                                      
                                         ?>
                                         <tr>
-                                            <td colspan="3">ชื่อ - นามสกุล : 
-                                                <input  style="width:75%" type="text" disabled="" placeholder="<?php echo $name_st ?>">
+                                            <td colspan="3">ชื่อ - นามสกุล : <?php echo $name_st ?>
                                             </td>
-                                            <td colspan="2">เลขรหัสประจำนักศึกษา :
-                                                <input  style="width:50%" type="text" disabled="" placeholder="<?php echo $id_st ?>">
+                                            <td colspan="2">เลขรหัสประจำนักศึกษา : <?php echo $id_st ?>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3">หลักสูตร : 
-                                                <input  style="width:75%" type="text" disabled="" placeholder="<?php echo $major ?>">
+                                            <td colspan="3">หลักสูตร : <?php echo $major ?>
                                             </td>
-                                            <td colspan="2">ภาควิชา : 
-                                                <input  style="width:65%" type="text" disabled="" placeholder="<?php echo 'คณิตศาสตร์และคอมพิวเตอร์'; ?>">
+                                            <td colspan="2">ภาควิชา : <?php echo 'คณิตศาสตร์และคอมพิวเตอร์'; ?>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="5">ชื่อสถานประกอบการ(ไทย หรือ อังกฤษ) : 
-                                                <input  style="width:50%" type="text" disabled="" placeholder="<?php echo $name_es ?>">
+                                            <td colspan="5">ชื่อสถานประกอบการ(ไทย หรือ อังกฤษ) : <?php echo $name_es ?>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td colspan="2">ที่อยู่สถานประกอบการ :</td>
-                                            <td colspan="3">
-                                                <textarea style="width:70%" name="address_es" id="address_es" disabled=""> <?php echo $address_es ?></textarea></td>
+                                            <td colspan="3">    <?php echo $address_es ?></td>
                                         </tr>
                                         <tr>
                                             <td colspan="5">ขอแจ้งรายละเอียดเกี่ยวกับที่พักระหว่างการฝึกประสบการณ์ดังนี้</td>
@@ -93,38 +104,38 @@
 
                                         <tr>
                                             <td width="3%"></td>
-                                            <td >เลขที่ : 
-                                                <input   style="width:50%" type="text" name="number">
+                                            <td style="width: 50%">เลขที่ : <?php echo $number ?>
+                                               
                                             </td>
-                                            <td >ถนน : 
-                                                <input   style="width:75%" type="text" name="road" >
+                                            <td >ถนน : <?php echo $road ?>
+                                                
                                             </td>
-                                            <td>ซอย : 
-                                                <input   style="width:75%" type="text" name="alley" >
+                                            <td>ซอย : <?php echo $alley ?> 
+                                                
                                             </td>
-                                            <td>ตำบล : 
-                                                <input  style="width:75%" type="text" name="district" >
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td >อำเภอ : 
-                                                <input  style="width:50%" type="text"  name="county">
-                                            </td>
-                                            <td colspan="2" align="center">จังหวัด :
-                                                <input  style="width:50%" type="text" name="city" >
-                                            </td>
-                                            <td>รหัสไปรษณีย์ :
-                                                <input  style="width:50%" type="text"  name="postcode">
+                                            <td>ตำบล : <?php echo $district ?>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td colspan="2">โทรศัพท์ :
-                                                <input  style="width:50%" type="text" name="phone">
+                                            <td >อำเภอ : <?php echo $county ?>
+                                                
                                             </td>
-                                            <td colspan="2">โทรสาร : 
-                                                <input  style="width:75%" type="text" name="fax">
+                                            <td colspan="2" align="center">จังหวัด : <?php echo $city ?>
+                                                
+                                            </td>
+                                            <td>รหัสไปรษณีย์ : <?php echo $postcode ?>
+                                               
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td colspan="2">โทรศัพท์ : <?php echo $phone ?>
+                                                
+                                            </td>
+                                            <td colspan="2">โทรสาร : <?php echo $fax ?>
+                                                
                                             </td>
                                         </tr>
                                         <tr>
@@ -132,31 +143,31 @@
                                         </tr>
                                         <tr>
                                             <td width="3%"></td>
-                                            <td >เลขที่ : <input style="width:50%"  type="text" name="number_contact" ></td>
-                                            <td >ถนน : <input style="width:75%" type="text" name="road_contact"></td>
-                                            <td>ซอย : <input style="width:75%" type="text" name="alley_contact"></td>
-                                            <td>ตำบล : <input step="width:50%" type="text" name="district_contact"</td>
+                                            <td >เลขที่ : <?php echo $number_contact ?> </td>
+                                            <td >ถนน : <?php echo $road_contact ?></td>
+                                            <td>ซอย : <?php echo $city_contact?></td>
+                                            <td>ตำบล : </td>
                                         </tr>
                                         <tr>
                                             <td ></td>
                                             <td >อำเภอ : 
-                                                <input style="width:60%" type="text" name="county_contact">
+                                                
                                             </td>
-                                            <td colspan="2" align="center">จังหวัด : 
-                                                <input style="width:75%" type="text" name="city_contact">
+                                            <td colspan="2" align="center">จังหวัด : <?php echo $city ?>
+                                                
                                             </td>
-                                            <td>รหัสไปรษณีย์ : 
-                                                <input style="width:60%" type="text" name="postcode_contact">
+                                            <td>รหัสไปรษณีย์ : <?php echo $postcode_contact ?>
+                                                
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td colspan="2">โทรศัพท์ :
-                                                <input style="width:75%" type="text" name="phone_contact">
+                                            <td colspan="2">โทรศัพท์ : <?php echo $phone_contact ?>
+                                                
                                             </td>
-                                            <td colspan="2">โทรสาร : 
-                                                <input style="width:75%" type="text" name="fax_contact">
+                                            <td colspan="2">โทรสาร : <?php echo $fax_contact ?>
+                                                
                                             </td>
                                         </tr>
 

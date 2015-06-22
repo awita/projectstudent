@@ -1,207 +1,216 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <title>ระบบจัดการข้อมูลการฝึกประสบการณ์วิชีพ</title>
+        <title>SB Admin - Bootstrap Admin Template</title>
 
-    <!-- Bootstrap Core CSS -->
- 
-    <?php echo css_asset('bootstrap.min.css');?>
-    <!-- Custom CSS -->
-   
-    <?php echo css_asset('sb-admin.css');?>
-    <!-- Morris Charts CSS -->
-   
-    <?php echo css_asset('morris.css');?>
-    <!-- Custom Fonts -->
-    
-    <?php echo css_asset('font-awesome.min.css');?>
+        <!-- Bootstrap Core CSS -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <?php echo css_asset('bootstrap.min.css'); ?>
+        <!-- Custom CSS -->
 
-</head>
+        <?php echo css_asset('sb-admin.css'); ?>
+        <!-- Custom Fonts -->
 
-<body>
+        <?php echo css_asset('font-awesome.min.css'); ?>
 
-    <div id="wrapper">
+        <?php echo js_asset('jquery-1.10.2.js'); ?>
 
-       
 
-        <div id="page-wrapper">
 
-            <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard <small>Statistics Overview</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                แสดงข้อมูลรายละเอียดนักศึกษา
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <i class="fa fa-dashboard"></i>  <a href="">หน้าหลัก</a>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-table"></i> เพิ่มสถานประกอบการณ์
+                                </li>
+                            </ol>
+                        </div>
                     </div>
+                    <?php
+                    $student = $student[0];
+                    $id_st = $student['id_st'];
+                    $name_st = $student['name_st'];
+                    $lastname_st = $student['lastname_st'];
+                    $tell_st = $student['tell_st'];
+                    $email = $student['email'];
+                    $major = $student['major'];
+                    $term = $student['term'];
+                    $year = $student['year'];
+                    $name_pr = $student['name_pr'];
+                    $relation = $student['relation'];
+                    $tell_pr = $student['tell_pr'];
+                    ?>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" align='center'>เพิ่มสถานประกอบการณ์</h3>
+                                </div>
+                                <div class="panel-body"> 
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th width = "30%">ข้อมูล</th>
+                                                <th>รายละเอียดนักศึกษา</th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>ชื่อนักศึกษา</td>
+                                            <td><?php echo $name_st ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>นามสกุล</td>
+                                            <td><?php echo $lastname_st ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>รหัสนักศึกษา</td>
+                                            <td><?php echo $id_st ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>สาขาวิชา</td>
+                                            <td><?php echo $major ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ปีการศึกษา</td>
+                                            <td><?php echo $year ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>เบอร์โทรศัพท์นักศึกษา</td>
+                                            <td><?php echo $tell_st ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>e-mail</td>
+                                            <td><?php echo $email ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ชื่อผู้ปกครอง</td>
+                                            <td><?php echo $name_pr ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ความสัมพันธ์</td>
+                                            <td><?php echo $relation ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>เบอร์โทรศัพท์</td>
+                                            <td><?php echo $tell_pr ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>กรุณาเลือกสถานประกอบการณ์</td>
+
+                                            <?php //print_r( $establish);?>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td id='select_est'>
+                                                เลือกสถานประกอบการณ์ที่มีอยู่แล้ว 
+                                                <select name="estabishlist" id="estabishlist"  class="form-control" onchange="showmodal()">
+                                                    <option>เลือกสถานประกอบการณ์</option>
+                                                    <option value="-1">เพิ่มสถานประกอบการณ์ใหม่</option>
+                                                    <?php foreach ($establish as $mykey => $myvalue) {
+                                                        ?>
+                                                        <option value="<?php echo $mykey ?>"><?php echo $myvalue ?></option>
+                                                    <?php } ?>                                                                                      
+                                                </select>  
+                                                <p id='newest'></p>
+                                            </td>                                                                                  
+                                        </tr>
+                                    </table>
+                                    <div class="col-md-2 col-md-offset-5">
+                                        <button class="btn btn-lg btn-default" type="submit" name="submit">บันทึกข้อมูล</button>                                       
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
                 </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Like SB Admin?</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
-                                        <div>New Comments!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>New Tasks!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>New Orders!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Support Tickets!</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
             </div>
-            <!-- /.container-fluid -->
+        </div>
+
+        <!-- Modal -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">เพิ่มสถานประกอบการณ์ใหม่</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" enctype="multipart/form-data" >
+                            <center>เลือกเอกสารเพื่ออัปโหลด :<br />
+                                <input type="file" name="userfile" multiple="multiple"  />
+                                <input type="submit" name="submit" value="Upload" class="btn btn-success" />
+                            </center>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                        <button type="submit" class="btn btn-primary" name="save" id="submit">บันทึกข้อมูล</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    
-    <?php echo js_asset('jquery.js');?>
+        <!-- jQuery -->
 
-    <!-- Bootstrap Core JavaScript -->
-   
-    <?php echo js_asset('bootstrap.min.js');?>
-    <!-- Morris Charts JavaScript -->
-    <!--<script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>-->
+        <?php echo js_asset('jquery.js'); ?>
+        <!-- Bootstrap Core JavaScript -->
 
-</body>
+        <script>
+
+            function showmodal() {
+                if ($('#estabishlist').val() == -1) {
+                    $('#myModal').modal('show')
+
+                } else {
+                    text = $("#estabishlist option:selected").text();
+                    $("#newest").html(text);
+                }
+
+            }
+
+        </script>
+
+        <?php echo js_asset('bootstrap.min.js'); ?>
+    </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

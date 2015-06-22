@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/views/document/showdata_form1.php</file>
             <file>file:/C:/xampp/htdocs/projectstudent/application/controllers/document.php</file>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/models/studentmodel.php</file>
+            <file>file:/C:/xampp/htdocs/projectstudent/application/models/documentmodel.php</file>
             <file>file:/C:/xampp/htdocs/projectstudent/application/views/document/menudocument.php</file>
             <file>file:/C:/xampp/htdocs/projectstudent/application/views/document/document_form1.php</file>
         </group>
