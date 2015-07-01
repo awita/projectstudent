@@ -41,21 +41,16 @@
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        
+
 
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg'); ?>" class="user-image" alt="User Image"/>
-                                <span class="hidden-xs"><?php echo $name_st ?></span>
+                                <span class="hidden-xs"><?php echo $name_st ?> &nbsp;&nbsp; <?php echo $lastname_st ?></span>
                             </a>
 
                             <ul class="dropdown-menu">
@@ -63,31 +58,35 @@
                                 <li class="user-header">
                                     <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg'); ?>" class="img-circle" alt="User Image" />
                                     <p>
-
-                                        <small><?php
-                                            echo $id_st;
-                                            echo "</br>";
-                                            echo $name_st;
-                                            echo $lastname_st;
-                                            ?></small>
-                                    </p>
-                                </li>
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="<?php echo base_url('/index.php/student/menu') ?>" class="btn btn-default btn-flat">เมนูหลัก</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="<?php echo base_url('index.php/student/logout') ?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
-                                    </div>
-                                </li>
-                            </ul>
+                                <h5>
+                                    <?php
+                                    echo $id_st;
+                                    echo "</br>";
+                                    echo $name_st;
+                                    ?>
+                                    &nbsp; 
+                                    <?php
+                                    echo $lastname_st;
+                                    echo "</br>";
+                                    echo $major;
+                                    ?>
+                                </h5>   
+                                </p>
                         </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar">เมนูหลัก</a>
+
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="<?php echo base_url('/index.php/student/menu') ?>" class="btn btn-default btn-flat">เมนูหลัก</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="<?php echo base_url('index.php/student/logout') ?>" class="btn btn-default btn-flat">ออกจากระบบ</a>
+                            </div>
                         </li>
+                    </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+
                     </ul>
                 </div>
             </nav>

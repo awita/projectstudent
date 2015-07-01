@@ -78,13 +78,11 @@
                                       
                                         ?>
                                         <tr>
-                                            <td colspan="3">ชื่อ - นามสกุล : <?php echo $name_st ?>
-                                            </td>
-                                            <td colspan="2">เลขรหัสประจำนักศึกษา : <?php echo $id_st ?>
-                                            </td>
+                                            <td colspan="3" >ชื่อ - นามสกุล : <?php echo $name_st?> &nbsp;&nbsp;&nbsp;<?php echo $lastname_st?></td>
+                                            <td colspan="2" width="3%">เลขรหัสประจำนักศึกษา : <?php echo $id_st ?></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3">หลักสูตร : <?php echo $major ?>
+                                            <td colspan="3"  >หลักสูตร : <?php echo $major ?>
                                             </td>
                                             <td colspan="2">ภาควิชา : <?php echo 'คณิตศาสตร์และคอมพิวเตอร์'; ?>
                                             </td>
@@ -99,12 +97,12 @@
                                             <td colspan="3">    <?php echo $address_es ?></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="5">ขอแจ้งรายละเอียดเกี่ยวกับที่พักระหว่างการฝึกประสบการณ์ดังนี้</td>
+                                            <td colspan="5"><b>ขอแจ้งรายละเอียดเกี่ยวกับที่พักระหว่างการฝึกประสบการณ์ดังนี้</b></td>
                                         </tr>
 
                                         <tr>
-                                            <td width="3%"></td>
-                                            <td style="width: 50%">เลขที่ : <?php echo $number ?>
+                                            <td width="1%"></td>
+                                            <td >เลขที่ : <?php echo $number ?>
                                                
                                             </td>
                                             <td >ถนน : <?php echo $road ?>
@@ -118,7 +116,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td></td>
+                                            <td width="1%"></td>
                                             <td >อำเภอ : <?php echo $county ?>
                                                 
                                             </td>
@@ -139,24 +137,24 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="5">ชื่อที่อยู่ ผู้ที่สามารถติดต่อได้ในกรณ์ฉุกเฉิน : </td>
+                                            <td colspan="5"><b>ชื่อที่อยู่ ผู้ที่สามารถติดต่อได้ในกรณ์ฉุกเฉิน :</b> </td>
                                         </tr>
                                         <tr>
-                                            <td width="3%"></td>
-                                            <td >เลขที่ : <?php echo $number_contact ?> </td>
-                                            <td >ถนน : <?php echo $road_contact ?></td>
-                                            <td>ซอย : <?php echo $city_contact?></td>
-                                            <td>ตำบล : </td>
+                                            <td width="1%"></td>
+                                            <td width="3%">เลขที่ : <?php echo $number_contact ?> </td>
+                                            <td width="3%">ถนน : <?php echo $road_contact ?></td>
+                                            <td width="3%">ซอย : <?php echo $alley_contact?></td>
+                                            <td width="3%">ตำบล : <?php echo $district_contact ?></td>
                                         </tr>
                                         <tr>
                                             <td ></td>
-                                            <td >อำเภอ : 
+                                            <td width="3%">อำเภอ : <?php echo $county_contact ?>
                                                 
                                             </td>
                                             <td colspan="2" align="center">จังหวัด : <?php echo $city ?>
                                                 
                                             </td>
-                                            <td>รหัสไปรษณีย์ : <?php echo $postcode_contact ?>
+                                            <td width="3%">รหัสไปรษณีย์ : <?php echo $postcode_contact ?>
                                                 
                                             </td>
 

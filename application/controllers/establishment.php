@@ -18,8 +18,7 @@ class establishment extends CI_Controller {
         $user = $this->session->userdata('user');
         $this->load->view('template/header_after', $user);
         $this->load->view('establishment/establishment_formadd');
-        $this->load->view('template/controlsidebar');
-        $this->load->view('template/footer');
+ 
     }
 
     public function addestablishment() {
@@ -41,12 +40,13 @@ class establishment extends CI_Controller {
 
     public function showestblis() {
         $user = $this->session->userdata('user');
-        $this->load->view('template/navigation_after',$user);
-        $this->load->model('studentmodel');
+        $this->load->view('template/header_after',$user);
+        $this->load->model('studentmodel'); 
         $this->load->model('establishmodel');
         
-        $data['establish'] = $this->studentmodel->showrelation($user['id_st']);
-        $this->load->view('establishment/showestablish', $data);
+        $data['establish'] = $this->studentmodel->showrelationview($user['id_st']);
+        print_r($data);
+        //$this->load->view('establishment/showestablish', $data);
     }
 
     public function showdataestablish() { 

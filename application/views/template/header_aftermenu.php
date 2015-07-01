@@ -41,12 +41,7 @@
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
+                
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
@@ -59,7 +54,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url('assets/dist/img/user2-160x160.jpg'); ?>" class="user-image" alt="User Image"/>
-                                <span class="hidden-xs"><?php echo $name_st ?></span>
+                                <span class="hidden-xs"><?php echo $name_st ?> &nbsp;&nbsp; <?php echo $lastname_st?></span>
                             </a>
 
                             <ul class="dropdown-menu">
@@ -89,9 +84,7 @@
                             </ul>
                         </li>
                         <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar">เมนูหลัก</a>
-                        </li>
+                       
                     </ul>
                 </div>
             </nav>

@@ -232,6 +232,7 @@ class student extends CI_Controller {
     }
 
     public function menu() {
+
         $user['user'] = $this->session->userdata('user');
         $this->load->view('template/header_aftermenu', $user);
         //$data['student'] = $this->studentmodel->showrelationview($user['id_st']);

@@ -54,7 +54,7 @@
                                             </tr>
                                             <tr>
                                                 <td>เอกสารหมายเลข 1</td>
-                                                <td><a href="<?php echo base_url('index.php/document/document_num1'); ?>">แบบแจ้งรายละเอียดที่พัก</a></td>
+                                                <td><a href="<?php echo base_url('index.php/document/chackshowdata'); ?>">แบบแจ้งรายละเอียดที่พัก</a></td>
 
                                                 <td>
                                                     <span class="badge bg-info">ดูเอกสาร</span>
@@ -130,18 +130,12 @@
                         <h4 class="modal-title" id="myModalLabel">อัปโหลดเอกสารหมายเลข 2</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST" enctype="multipart/form-data" >
-                            
+                        <form action="" method="POST" enctype="multipart/form-data" >                            
                             <center>เลือกเอกสารเพื่ออัปโหลด :<br />
                                 <input type="file" name="uploadfile" multiple="multiple"  />
                                 <input type="submit" name="submit" value="Upload" class="btn btn-success" />
                             </center>
-
-
-
                         </form>
-
-
                     </div>
                     <div class="modal-footer">
 
@@ -150,7 +144,7 @@
             </div>
         </div>  
 
-      
+
         <!-- Bootstrap Core JavaScript -->
 
         <script>
