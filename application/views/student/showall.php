@@ -66,10 +66,10 @@
                                             $year = $row['year'];
 
                                             $link = anchor('teacher/detailstudent/' . $id_st, "$name_st");
-                                            $update = anchor('student/formupdate/' . $id_st, '<button  class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>');
+                                            $update = anchor('student/formupdate/' . $id_st, '<button  class="btn btn-primary "><i class="fa fa-edit></i></button>');
 
                                             $attributs = "onclick= \"return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')\" ";
-                                            $delete = anchor('student/delete/' . $id_st, '<button  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>', $attributs);
+                                            $delete = anchor('student/delete/' . $id_st, '<button  class="btn btn-danger "><i class="fa fa-trash"></i></button>', $attributs);
 
                                             echo "<tr>
                         <td>$id_st</td>

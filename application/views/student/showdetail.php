@@ -5,7 +5,7 @@
         <?php echo css_asset('bootstrap.min.css'); ?>
         <!-- Custom Fonts -->
         <?php echo css_asset('font-awesome.min.css'); ?>
-        
+
     </head>
     <body>
         <div class="container-fluid">
@@ -29,10 +29,13 @@
 
 
             <div class="row">
+
                 <div class="col-md-8 col-md-offset-2">
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">ข้อมูลรายละเอียดนักศึกษา</h3>
+
                         </div>
 
                         <?php
@@ -49,18 +52,20 @@
                         $relation = $student['relation'];
                         $tell_pr = $student['tell_pr'];
                         $gender = $student['gender'];
-                        
-                        ?>     
+                        ?>  
+
                         <div class="panel-body"> 
                             <table class="table table-bordered">
                                 <thead >
                                     <tr>
-                                        <th colspan="2" class="bg-info">ข้อมูลทั่วไปของนักศึกษา</th>
-                                    </tr>
-                                    <tr >
-                                        <th width = "30%">ข้อมูล</th>
-                                        <th>รายละเอียดนักศึกษา</th>
-                                    </tr>
+                                        <th class="bg-info">ข้อมูลทั่วไปของนักศึกษา </th>
+                                        <th class="bg-info right" ><a href="<?php echo base_url('index.php/student/formupdate/' . $id_st); ?>">
+                                        <i class="fa fa-edit" aling="rith"></i></a></th>
+                                </tr>
+                                <tr >
+                                    <th width = "30%">ข้อมูล</th>
+                                    <th>รายละเอียดนักศึกษา</th>
+                                </tr>
                                 </thead>
 
                                 <tbody>
@@ -121,12 +126,8 @@
                                         <td><?php echo $tell_pr ?></td>
                                 </tbody>
                             </table>
-                            <?php echo form_open(''); ?>
-                            <div class="col-md-4 col-md-offset-4 ">
-                                <input type="submit" name="edit" value="แก้ไขข้อมูล"/>
 
-                            </div>
-                            <?php echo form_close(); ?>
+
                         </div>
                     </div>
                 </div>
